@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "package": "com.takaranoao.villagerofferex.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "MixinGossipType",
+    "MixinItemStack",
+    "MixinTradeOffer"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
