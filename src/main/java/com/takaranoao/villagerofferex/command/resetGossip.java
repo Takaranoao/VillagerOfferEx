@@ -3,13 +3,9 @@ package com.takaranoao.villagerofferex.command;
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.arguments.IntegerArgumentType;
 import com.mojang.brigadier.context.CommandContext;
-import com.mojang.brigadier.tree.CommandNode;
-import com.takaranoao.villagerofferex.mixin.MixinGossipType;
-import net.fabricmc.fabric.api.command.v1.CommandRegistrationCallback;
 import net.minecraft.server.command.CommandManager;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.text.LiteralText;
-import net.minecraft.text.TranslatableText;
 import net.minecraft.village.VillageGossipType;
 
 import java.lang.reflect.InvocationTargetException;
@@ -47,28 +43,22 @@ public class resetGossip extends TakaCommand{
     }
 
     private static String _toStringVillageGossipType(VillageGossipType type) {
-        StringBuffer stb = new StringBuffer();
-        stb.append("key:");
-        stb.append(type.key);
-        stb.append(",");
-
-        stb.append("decay:");
-        stb.append(type.decay);
-        stb.append(",");
-
-        stb.append("maxValue:");
-        stb.append(type.maxValue);
-        stb.append(",");
-
-        stb.append("maxValue:");
-        stb.append(type.maxValue);
-        stb.append(",");
-
-        stb.append("shareDecrement:");
-        stb.append(type.shareDecrement);
 
         //stb.append(System.lineSeparator());
-        return stb.toString();
+        return "key:" +
+                type.key +
+                "," +
+                "decay:" +
+                type.decay +
+                "," +
+                "multiplier:" +
+                type.multiplier +
+                "," +
+                "maxValue:" +
+                type.maxValue +
+                "," +
+                "shareDecrement:" +
+                type.shareDecrement;
     }
 
     private static int executesMultiplier(CommandContext<ServerCommandSource> serverCommandSourceCommandContext) {
